@@ -1,0 +1,167 @@
+/* INDEX 
+   BASE 
+   MOBILE
+   MOBILE MENU
+   DESKTOP 
+*/ 
+
+/* ----------- BASE ------------------------*/ 
+
+:root {
+    --dark-gray: hsl(0, 0%, 63%); 
+    --black: hsl(0, 0%, 0%); 
+    --white: hsl(0, 0%, 100%); 
+    --very_dark-gray: hsl(0, 0%, 27%); 
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+    width: 100wv;
+    justify-content: center;   
+}
+
+/* ---------- MOBILE ---------------------- */ 
+
+@media screen and (max-width: 1440px) {
+
+    .container {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "hero-image"
+          "hero-text"
+          "image-dark"
+          "about"
+          "image-light";
+        width: 375px; 
+        height: 950px;
+      }
+
+    .hero-image { 
+        grid-area: hero-image;
+        background: url('./images/mobile-image-hero-1.jpg'); 
+        width: 375px;
+        height: 360px;
+        background-size: cover; 
+    }
+
+    nav {
+        margin-top: 30px;
+    }
+
+    .logo {
+        display: flex; 
+        justify-content: center;
+        width: 375px;
+        height: 14px; 
+    }
+    
+    .hero-text { grid-area: hero-text; }
+      .image-dark { grid-area: image-dark; }
+      .about { grid-area: about; }
+      .image-light { grid-area:image-light;}
+    
+    
+      /* ---------  MOBILE MENU  ------------------ */ 
+
+    .menu-wrap {
+        position: relative;
+        top: -15px;
+        left: 20px;
+    }
+
+    .menu-wrap .toggler {
+        position: absolute;
+        left: 20px;
+        z-index: 2;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .hamburger > div {
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background: var(--black); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .toggler:checked + .hamburger > div {
+        background: var(--black)
+    } 
+
+    /* Hamburger Lines - Top & Bottom */
+  .menu-wrap .hamburger > div::before,
+  .menu-wrap .hamburger > div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 30px;
+    height: 2px;
+    background: inherit;
+  }
+
+  .menu-wrap .hamburger > div::after {
+    top: 10px;
+  }
+
+  /* Toggler Animation */
+  .menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  ul {
+    display: flex;
+    margin-left: -20px;
+    margin-top: -20px;
+    display: flex; 
+    align-items: center;
+    height: 120px;
+    width: 375px; 
+    background: var(--white);   
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+
+
+    
+
+
+}
+
