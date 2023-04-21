@@ -3,122 +3,137 @@
    MOBILE
    MOBILE MENU
    DESKTOP 
-*/ 
+*/
 
-/* ----------- BASE ------------------------*/ 
+/* ----------- BASE ------------------------*/
 
 :root {
-    --dark-gray: hsl(0, 0%, 63%); 
-    --black: hsl(0, 0%, 0%); 
-    --white: hsl(0, 0%, 100%); 
-    --very_dark-gray: hsl(0, 0%, 27%); 
+  --dark-gray: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very_dark-gray: hsl(0, 0%, 27%);
 }
 
 * {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex; 
-    font-family: 'League Spartan', sans-serif;
-    font-size: 12px;
-    width: 100wv;
-    justify-content: center;   
+  display: flex;
+  flex-direction: column;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 12px;
+  width: 100wv;
+  justify-content: center;
 }
 
-/* ---------- MOBILE ---------------------- */ 
+/* ---------- MOBILE ---------------------- */
 
 @media screen and (max-width: 1440px) {
 
-    .container {
-        display: grid; 
-        grid-template-columns: 1fr; 
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "hero-image"
-          "hero-text"
-          "image-dark"
-          "about"
-          "image-light";
-        width: 375px; 
-        height: 950px;
-      }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "hero-image"
+      "hero-text"
+      "image-dark"
+      "about"
+      "image-light";
+    width: 375px;
+    height: 400px;
+  }
 
-    .hero-image { 
-        grid-area: hero-image;
-        background: url('./images/mobile-image-hero-1.jpg'); 
-        width: 375px;
-        height: 360px;
-        background-size: cover; 
-    }
+  .hero-image {
+    grid-area: hero-image;
+    background: url('./images/mobile-image-hero-1.jpg');
+    width: 375px;
+    height: 360px;
+    background-size: cover;
+  }
 
-    nav {
-        margin-top: 30px;
-    }
+  nav {
+    margin-top: 30px;
+  }
 
-    .logo {
-        display: flex; 
-        justify-content: center;
-        width: 375px;
-        height: 14px; 
-    }
-    
-    .hero-text { grid-area: hero-text; }
-      .image-dark { grid-area: image-dark; }
-      .about { grid-area: about; }
-      .image-light { grid-area:image-light;}
-    
-    
-      /* ---------  MOBILE MENU  ------------------ */ 
+  .logo {
+    position: absolute;
+    top: 45px;
+    display: flex;
+    justify-content: center;
+    width: 375px;
+    height: 14px;
+  }
 
-    .menu-wrap {
-        position: relative;
-        top: -15px;
-        left: 20px;
-    }
+  .hero-text {
+    grid-area: hero-text;
+  }
 
-    .menu-wrap .toggler {
-        position: absolute;
-        left: 20px;
-        z-index: 2;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        opacity: 0;
-    }
+  .image-dark {
+    grid-area: image-dark;
+  }
 
-    .menu-wrap .hamburger {
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        z-index: 1;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .about {
+    grid-area: about;
+  }
 
-    .menu-wrap .hamburger > div {
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background: var(--black); 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .image-light {
+    grid-area: image-light;
+  }
 
-    .menu-wrap .toggler:checked + .hamburger > div {
-        background: var(--black)
-    } 
 
-    /* Hamburger Lines - Top & Bottom */
-  .menu-wrap .hamburger > div::before,
-  .menu-wrap .hamburger > div::after {
+  /* ---------  MOBILE MENU  ------------------ */
+
+  .menu-wrap {
+    position: relative;
+    top: -15px;
+    left: 20px;
+  }
+
+  .menu-wrap .toggler {
+    position: absolute;
+    left: 20px;
+    top: 45px;
+    z-index: 2;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+
+  .menu-wrap .hamburger {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-wrap .hamburger>div {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-wrap .toggler:checked+.hamburger>div {
+    background: var(--black)
+  }
+
+  /* Hamburger Lines - Top & Bottom */
+  .menu-wrap .hamburger>div::before,
+  .menu-wrap .hamburger>div::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -128,40 +143,160 @@ body {
     background: inherit;
   }
 
-  .menu-wrap .hamburger > div::after {
+  .menu-wrap .hamburger>div::after {
     top: 10px;
   }
 
   /* Toggler Animation */
-  .menu-wrap .toggler:checked + .hamburger > div {
+  .menu-wrap .toggler:checked+.hamburger>div {
     transform: rotate(135deg);
   }
 
-  .menu-wrap .toggler:checked + .hamburger > div:before,
-  .menu-wrap .toggler:checked + .hamburger > div:after {
+  .menu-wrap .toggler:checked+.hamburger>div:before,
+  .menu-wrap .toggler:checked+.hamburger>div:after {
     top: 0;
     transform: rotate(90deg);
   }
 
-  ul {
+  .menu {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 120px;
+    width: 375px;
+    background: var(--white);
     margin-left: -20px;
     margin-top: -20px;
-    display: flex; 
-    align-items: center;
-    height: 120px;
-    width: 375px; 
-    background: var(--white);   
+    visibility: hidden;
+  }
+
+  .menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    width: 250px;
   }
 
   li {
     list-style-type: none;
+    font-size: 1.5em;
+    z-index: 1; 
   }
 
+  li:hover {
+    cursor: pointer;
+  }
 
+  .scroll-image {
+    position: absolute;
+    top: 310px;
+    left: 260px;
+    display: flex;
+  }
 
-    
+  .next,
+  .previous {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    background-color: var(--black);
+    align-items: center;
+    justify-content: center;
+  }
 
+  .next:hover ,
+  .previous:hover {
+    cursor: pointer;
+    background: var(--very_dark-gray); 
+
+  }
+
+  .next img {
+    width: 14px;
+    height: 24px;
+  }
+
+  .hero-text {
+    padding-left: 23px;
+    padding-right: 23px;
+    width: 100%;
+    height: 370px;
+
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-bottom: 50px;
+  }
+
+  .shop-link:hover {
+    cursor: pointer;
+  }
+
+  .link {
+    display: flex;
+  }
+
+  .arrow {
+    margin-left: 40px;
+  }
+
+  .image-dark {
+    width: 375px;
+    height: 230px;
+  }
+
+  .image-dark img {
+    width: 375px;
+    height: 230px;
+  }
+
+  .about {
+    padding-left: 23px;
+    padding-right: 23px;
+    height: 320px; 
+  }
+
+  .about h2 {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    margin-top: 50px;
+  }
+
+  .about p {
+    font-size: 1rem; 
+  }
+
+  .image-light {
+    width: 375px;
+    height: 208px; 
+  }
+
+  .image-light img {
+    width: 375px; 
+    height: 208px; 
+  }
 
 }
 
