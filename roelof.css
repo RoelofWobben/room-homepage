@@ -346,41 +346,35 @@ li:hover {
     max-width: 820px;  
     height: 530px; 
     margin: 0 auto;
-    overflow: hidden;
-}
-.slide{ 
+  }
+.slide
+{ 
     position: absolute;
     top:0;
     width: 100%;
-    height: 26.625rem;
+    height: 640px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 1s;
 }
+
 .slide > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/*
-
-https://codepen.io/CodedByPiyush/pen/vYeLqaN
-
-*/ 
-
-  
-
-  .hero-image {
+.hero-image {
     grid-area: hero-image;
     width: 820px;
     height: 530px;
+    overflow: hidden;  
   }
 
   .hero-image img {
     width: 820px;
-    height: 530px;
+    height: 640px;
   }
 
   .hamburger {
@@ -392,7 +386,9 @@ https://codepen.io/CodedByPiyush/pen/vYeLqaN
   }
 
   .menu {
-    position: relative;
+    position: absolute;
+    top: 60px;
+    left: 120px;  
     height: 120px;
     width: 820px;
     margin-left: -20px;
@@ -401,6 +397,8 @@ https://codepen.io/CodedByPiyush/pen/vYeLqaN
   }
 
   ul {
+    position: absolute; 
+    top: 0; 
     display: flex;
     justify-content: space-between;
     margin-left: 100px;
@@ -411,12 +409,14 @@ https://codepen.io/CodedByPiyush/pen/vYeLqaN
   li {
     list-style-type: none;
     font-size: 1.5em;
-    color: var(--black);
+    color: var(--white);
     z-index: 1;
   }
 
   li:hover {
     cursor: pointer;
+    border-bottom: 4px solid var(--white); 
+    padding-bottom: 5px;
   }
 
   .logo {
@@ -443,6 +443,8 @@ https://codepen.io/CodedByPiyush/pen/vYeLqaN
     justify-content: center;
     padding-left: 50px;
     padding-right: 50px;
+    overflow: hidden;
+    height: 520px;  
   }
 
   h1 {
@@ -542,6 +544,11 @@ https://codepen.io/CodedByPiyush/pen/vYeLqaN
 
   .image-light {
     grid-area: image-light;
+  }
+
+  .text {
+    height: 540px;
+    padding-top: 50px;  
   }
 
 }
